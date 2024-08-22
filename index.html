@@ -12,17 +12,17 @@
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 140px;
-  background-color: #555;
+  width: 30px;
+  background-color: gold;
   color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: 150%;
+  bottom: 100%;
   left: 50%;
-  margin-left: -75px;
+  margin-left: 0;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -35,7 +35,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: gold transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {
@@ -73,11 +73,11 @@ button {
 <body bgcolor="#000000">
 <center>
 <!--<p style><font face="courier" size="6" color="gold"><b><i>PIX COPIA E COLA</i></b></font></p>-->
-<img width="300" height="140" src="pix.png"><br>
+<img width="300" height="140" src="pix.png"><br><br><br><br><br>
 
 <div class="tooltip">
 <button onclick="myFunction()" onmouseout="outFunc()">
-  <!--<span class="tooltiptext" id="myTooltip">Copie clicando aqui</span>-->
+  <span class="tooltiptext" id="myTooltip"><img width="30" height="30" src="copiar.png"></span>
   00020126460014br.gov.bcb.pi<br>x0124victormleitaoo@gmail.c<br>om5204000053039865802BR5925<br>VICTOR MATHEUS CANDEIA CA6005Patos6211050726f78796<br>304E5AC
   </button><br>
   <textarea hidden id="myInput" name="myInput" rows="3" cols="50" disabled>00020126460014br.gov.bcb.pix0124victormleitaoo@gmail.com5204000053039865802BR5925VICTOR MATHEUS CANDEIA CA6005Patos6211050726f78796304E5AC</textarea>
@@ -93,7 +93,7 @@ function myFunction() {
   navigator.clipboard.writeText(copyText.value);
   
   var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copiado, cole no aplicativo do seu banco e realize o pagamento.";
+  tooltip.innerHTML = "✅";
 }
 
 function outFunc() {
