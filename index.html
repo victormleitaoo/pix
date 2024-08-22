@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PIX COPIA E COLA - @victormleitaoo</title>
+<link rel="icon" type="image/x-icon" href="icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+textarea {
+  width: 300px;
+  height: 140px;
+  padding: 12px 12px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 20px;
+  background-color: #1C1C1C;
+  font-size: 17px;
+  resize: none;
+  font-family: "courier";
+  color: gold;
+}
+button {
+  width: 300px;
+  height: 140px;
+  padding: 12px 12px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 20px;
+  background-color: #1C1C1C;
+  font-size: 17px;
+  resize: none;
+  font-family: "courier";
+  color: gold;
+}
+</style>
+</head>
+<body bgcolor="#000000">
+<center>
+<p style><font face="courier" size="6" color="gold"><b><i>PIX COPIA E COLA</i></b></font></p>
+
+<div class="tooltip">
+<button onclick="myFunction()" onmouseout="outFunc()">
+  <!--<span class="tooltiptext" id="myTooltip">Copie clicando aqui</span>-->
+  00020126460014br.gov.bcb.pix<br>0124victormleitaoo@gmail.com<br>5204000053039865802BR5925VIC<br>TOR MATHEUS CANDEIA CA6005Patos6211050726f787963<br>04E5AC
+  </button><br>
+  <textarea hidden id="myInput" name="myInput" rows="3" cols="50" disabled>00020126460014br.gov.bcb.pix0124victormleitaoo@gmail.com5204000053039865802BR5925VICTOR MATHEUS CANDEIA CA6005Patos6211050726f78796304E5AC</textarea>
+
+  <!--<p style><font face="courier" size="2" color="#1C1C1C">Nome: VICTOR MATHEUS C. C. LEITÃO<br>Chave: victormleitaoo@gmail.com<br>Recargapay do Brasil</font></p>-->
+</div>
+</center>
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copiado, cole no aplicativo do seu banco e realize o pagamento.";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+</script>
+</body>
+</html>
