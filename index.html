@@ -40,17 +40,43 @@
   visibility: visible;
   opacity: 1;
 }
+textarea {
+  width: 300px;
+  height: 150px;
+  padding: 12px 12px;
+  box-sizing: border-box;
+  border: 5px solid #ffd700;
+  border-radius: 20px;
+  background-color: #363636;
+  font-size: 17px;
+  resize: none;
+  font-family: "courier";
+  color: gold;
+}
+button {
+  width: 300px;
+  background-color: #363636;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  font-family: "courier";
+}
 </style>
 </head>
-<body>
+<body bgcolor="#000000">
 <center>
-<p>Pix Copia e Cola</p>
+<p style><font face="courier" size="8" color="gold"><b><i>PIX COPIA E COLA</i></b></font></p>
 
 <textarea id="myInput" name="myInput" rows="3" cols="50" disabled>00020126460014BR.GOV.BCB.PIX0124victormleitaoo@gmail.com5204000053039865802BR5925VICTOR MATHEUS C C LEITAO6005PATOS62140510IMPRESSOES6304DD34</textarea>
-<br><br>
+<br>
 <div class="tooltip">
 <button onclick="myFunction()" onmouseout="outFunc()">
-  <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+  <span class="tooltiptext" id="myTooltip">Clique para copiar</span>
   Clique aqui para copiar
   </button>
 </div>
