@@ -1,45 +1,75 @@
-<textarea id="story" name="story" rows="5" cols="33">
-It was a dark and stormy night...
-</textarea>
-<center><p id="copyText">Pix Copia e Cola:<br>00020126460014BR.GOV.BCB.PIX0124victormleitaoo@gmail.com5204000053039865802BR5925VICTOR MATHEUS C C LEITAO6005PATOS62140510IMPRESSOES6304DD34</p></center>
-
-<div id="notification" class="notification"></div>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.notification {
-    display: none;
-    position: fixed;
-    bottom: 20px; 
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 </style>
+</head>
+<body>
+<center>
+<p>Pix Copia e Cola</p>
 
+<textarea id="myInput" name="myInput" rows="3" cols="50" disabled>00020126460014BR.GOV.BCB.PIX0124victormleitaoo@gmail.com5204000053039865802BR5925VICTOR MATHEUS C C LEITAO6005PATOS62140510IMPRESSOES6304DD34</textarea>
+<br><br>
+<div class="tooltip">
+<button onclick="myFunction()" onmouseout="outFunc()">
+  <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+  Clique aqui para copiar
+  </button>
+</div>
+</center>
 <script>
-    function mensagemRetorno(mensagem) {
-        var notification = document.getElementById('notification');
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Pix Copia e Cola copiado, cole no aplicativo do seu banco e realize o pagamento.";
+}
 
-        // Correção aqui: usar 'innerText = mensagem' ao invés de 'innerText(mensagem)'
-        notification.innerText = mensagem;
-        notification.style.display = 'block';
-        
-        setTimeout(function() {
-            notification.style.display = 'none';
-        }, 5000);
-    };
-
-    document.getElementById('copyText').addEventListener('click', function() {
-        const textoParaCopiar = "00020126460014BR.GOV.BCB.PIX0124victormleitaoo@gmail.com5204000053039865802BR5925VICTOR MATHEUS C C LEITAO6005PATOS62140510IMPRESSOES6304DD34";
-
-        navigator.clipboard.writeText(textoParaCopiar).then(() => {
-            mensagemRetorno("Texto copiado com sucesso!");
-        }).catch(err => {
-            mensagemRetorno("Falha ao copiar o texto. Por favor, copie manualmente.");
-        });
-    });
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
 </script>
+</body>
+</html>
